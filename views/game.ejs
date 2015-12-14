@@ -1,0 +1,112 @@
+<% include header %>
+
+  <div id="map"></div>
+
+  <script>
+		// // Note: This example requires that you consent to location sharing when
+		// // prompted by your browser. If you see the error "The Geolocation service
+		// // failed.", it means you probably did not give permission for the browser to
+		// // locate you.
+
+		// function initMap() {
+
+		// 	var latlng = new google.maps.LatLng(-37.818806, 144.959046);
+
+		//   var map = new google.maps.Map(document.getElementById('map'), {
+		//     center: {lat: -34.397, lng: 144.644},
+		//     zoom: 16
+		//   });
+
+		//   var image = 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif';
+	 //    var marker = new google.maps.Marker({
+	 //      position: latlng,
+	 //      icon: image,
+	 //      optimized: false
+	 //    });
+	 //    marker.setMap(map);
+
+		//   var infoWindow = new google.maps.InfoWindow({map: map});
+
+		//   // Try HTML5 geolocation.
+		//   if (navigator.geolocation) {
+		//     navigator.geolocation.getCurrentPosition(function(position) {
+		//       var pos = {
+		//         lat: position.coords.latitude,
+		//         lng: position.coords.longitude
+		//       };
+
+		//       infoWindow.setPosition(pos);
+		//       infoWindow.setContent('Location found.');
+		//       map.setCenter(pos);
+
+
+		//     }, function() {
+		//       handleLocationError(true, infoWindow, map.getCenter());
+		//     });
+		//   } else {
+		//     // Browser doesn't support Geolocation
+		//     handleLocationError(false, infoWindow, map.getCenter());
+		//   }
+		// }
+
+		// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		//   infoWindow.setPosition(pos);
+		//   infoWindow.setContent(browserHasGeolocation ?
+		//                         'Error: The Geolocation service failed.' :
+		//                         'Error: Your browser doesn\'t support geolocation.');
+		// }
+		function initMap() {
+			if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showCurrentLocation);
+      } else {
+        alert("Geolocation API not supported.");
+      }
+
+      function showCurrentLocation(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var coords = new google.maps.LatLng(latitude, longitude);
+
+        var mapOptions = {
+          zoom: 20,
+          center: coords
+    		};
+
+	      //create the map, and place it in the HTML map div
+	      map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+	      //place the initial marker
+	      var marker = new google.maps.Marker({
+		      position: coords,
+		      map: map,
+		      title: "Current location!",
+	      	icon: 'http://sprites.pokecheck.org/t/187.gif',
+		    	optimized: false
+	      });
+
+	      //pokemon markers
+	      var latlng = new google.maps.LatLng(-37.818806, 144.959046);
+	      var pokeMarker = new google.maps.Marker({
+		      position: latlng,
+		      icon: 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
+		      optimized: false,
+		      map: map
+		    });
+		    pokeMarker.setMap(map);
+
+		    // marker info window
+		    var contentString = '<button>catch?</button>';
+
+			  var infowindow = new google.maps.InfoWindow({
+			    content: contentString
+			  });
+
+			  pokeMarker.addListener('click', function() {
+			    infowindow.open(map, pokeMarker);
+			  });
+	    }
+	  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgHchX7JLYPIJuwGmi3Criyl_j3kuAppg&signed_in=true&callback=initMap"async defer></script>
+
+<% include footer %>
