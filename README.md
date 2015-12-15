@@ -1,9 +1,9 @@
-# PokeHunt
+# PokéHunt
 
 ## Overview
-PokeHunt is a game based on the Pokémon series. It features Google Maps API and the use of geolocation to simulate player adventure to catch Pokémon surrounding the map.
+PokéHunt is a game based on the Pokémon series. It features Google Maps API and the use of geolocation to simulate player adventure to catch Pokémon surrounding the map.
 
-THIS PROJECT IS UNDER CONSSTRUCTION
+THIS PROJECT IS UNDER CONSTRUCTION
 
 ## Technologies
 

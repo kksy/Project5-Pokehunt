@@ -1,8 +1,40 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: pokeFont;
+  src: url(/font/pokemon_solid.ttf);
 }
 
-a {
-  color: #00B7FF;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+	font-size: 45px;
+	text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
+}
+
+h2 {
+	font-size: 20px;
+}
+
+#map {
+  height: 100%;
+}
+
+.title {
+	position: fixed;
+	z-index: 10;
+	left: 50%;
+  transform: translate(-50%, 0);
+  font-family: pokeFont;
+}
+
+.stats {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	padding: 10px;
+	cursor: pointer;
+	text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
 }
