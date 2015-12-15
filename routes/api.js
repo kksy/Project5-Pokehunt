@@ -24,5 +24,28 @@ router.post('/users', function(req, res) {
   });
 });
 
+// GET all pokemon
+router.get('/pokemons', function(req, res) {
+  models.pokemon.findAll({}).then(function(pokemons) {
+    res.json(pokemons);
+  });
+});
+
+// POST new pokemon
+// To add a new pokemon, run the server - gulp - and then run the following in a new terminal window:
+// $ curl --data "name=[name of pokemon]&..." http://localhost:3000/users
+router.post('/pokemons', function(req, res) {
+  models.pokemon.create({
+    name: req.body.name,
+    question: req.body.question,
+    answer: req.body.answer,
+    lat: req.body.lat,
+    lng: req.body.lng,
+    image: req.body.image
+  }).then(function(pokemon) {
+    res.json(pokemon);
+  });
+});
+
 
 module.exports = router;

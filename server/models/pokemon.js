@@ -2,11 +2,15 @@
 module.exports = function(sequelize, DataTypes) {
   var pokemon = sequelize.define('pokemon', {
     name: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    question: DataTypes.STRING,
+    answer: DataTypes.STRING,
+    lat: DataTypes.FLOAT,
+    lng: DataTypes.FLOAT,
+    image: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        pokemon.belongsTo(models.user);
+        // associations can be defined here
       }
     }
   });

@@ -1,0 +1,21 @@
+-- database app
+
+curl --data "name=Squirtle&lat=-37.818634&lng=144.959284&image=http://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Bulbasaur&lat=-37.809985&lng=144.964561&image=http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Growlithe&lat=-37.810079&lng=144.962719&image=http://img.pokemondb.net/sprites/black-white/anim/normal/growlithe.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Charmander&lat=-37.810875&lng=144.962376&image=http://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Pikachu&lat=-37.813056&lng=144.962217&image=http://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Chikorita&lat=-37.813264&lng=144.963014&image=http://img.pokemondb.net/sprites/black-white/anim/normal/chikorita.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Pichu&lat=-37.812668&lng=144.960451&image=http://img.pokemondb.net/sprites/black-white/anim/normal/pichu.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Mareep&lat=-37.811214&lng=144.964991&image=http://img.pokemondb.net/sprites/black-white/anim/normal/mareep.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Cyndaquil&lat=-37.811590&lng=144.963777&image=http://img.pokemondb.net/sprites/black-white/anim/normal/cyndaquil.gif" http://localhost:3000/api/pokemons
+
+curl --data "name=Totodile&lat=-37.818218&lng=144.967065&image=http://pokemondb.net/pokedex/totodile" http://localhost:3000/api/pokemons

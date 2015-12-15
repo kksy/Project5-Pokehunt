@@ -1,7 +1,7 @@
 <% include header %>
 
   <div id="map"></div>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   <script>
 		// // Note: This example requires that you consent to location sharing when
 		// // prompted by your browser. If you see the error "The Geolocation service
@@ -55,6 +55,7 @@
 		//                         'Error: The Geolocation service failed.' :
 		//                         'Error: Your browser doesn\'t support geolocation.');
 		// }
+
 		function initMap() {
 			if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showCurrentLocation);
@@ -84,26 +85,59 @@
 		    	optimized: false
 	      });
 
+	      // get API pokemon data
+	      var options = {
+					url: '/api/pokemons',
+					type: 'get',
+					dataType: 'json'
+				};
+
+				var pokemons = []; 
+				$.ajax(options).done(function(data) {
+					pokemons = data;
+					$.each(pokemons, function(index, pokemon) {
+
+						// pokemon markers
+						var pokeMarker = new google.maps.Marker({
+				      position: {lat: pokemon.lat, lng: pokemon.lng},
+				      icon: pokemon.image,
+				      optimized: false,
+				      map: map
+				    });
+				    pokeMarker.setMap(map);
+
+				    // marker info window
+				    var contentString = '<p>You found a ' + pokemon.name + '!</p><button>catch?</button>';
+
+					  var infowindow = new google.maps.InfoWindow({
+					    content: contentString
+					  });
+
+					  pokeMarker.addListener('click', function() {
+					    infowindow.open(map, pokeMarker);
+					  });
+					});
+				});
+
 	      //pokemon markers
-	      var latlng = new google.maps.LatLng(-37.818806, 144.959046);
-	      var pokeMarker = new google.maps.Marker({
-		      position: latlng,
-		      icon: 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
-		      optimized: false,
-		      map: map
-		    });
-		    pokeMarker.setMap(map);
+	     //  var latlng = new google.maps.LatLng(-37.818806, 144.959046);
+	     //  var pokeMarker = new google.maps.Marker({
+		    //   position: latlng,
+		    //   icon: 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
+		    //   optimized: false,
+		    //   map: map
+		    // });
 
-		    // marker info window
-		    var contentString = '<button>catch?</button>';
+		   //  // marker info window
+		   //  var contentString = '<button>catch?</button>';
 
-			  var infowindow = new google.maps.InfoWindow({
-			    content: contentString
-			  });
+			  // var infowindow = new google.maps.InfoWindow({
+			  //   content: contentString
+			  // });
 
-			  pokeMarker.addListener('click', function() {
-			    infowindow.open(map, pokeMarker);
-			  });
+			  // pokeMarker.addListener('click', function() {
+			  //   infowindow.open(map, pokeMarker);
+			  // });
 	    }
 	  }
   </script>
