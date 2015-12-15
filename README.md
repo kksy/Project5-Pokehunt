@@ -10,5 +10,9 @@ THIS PROJECT IS UNDER CONSSTRUCTION
 1. Node.js
 2. HTML5
 3. CSS3
-4. PostgreSQL
-5. Express
+4. JavaScript, including
+	- jQuery
+	- AJAX
+5. PostgreSQL
+6. Express
+7. Google Maps API
