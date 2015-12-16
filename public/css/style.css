@@ -29,5 +29,7 @@ h2 {
   width: 100%;
   bottom: 0;
   padding: 10px;
-  cursor: pointer;
-  text-shadow: 4px 4px 6px #969696; }
+  cursor: pointer; }
+
+#posWatcher {
+  margin-left: 5px; }

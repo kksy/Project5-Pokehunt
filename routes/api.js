@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
 
 // include database models
 var models = require('../server/models/index');
@@ -44,6 +45,23 @@ router.post('/pokemons', function(req, res) {
     image: req.body.image
   }).then(function(pokemon) {
     res.json(pokemon);
+  });
+});
+
+// GET all pokemon
+router.get('/userPokemons', function(req, res) {
+  models.user_pokemon.findAll({}).then(function(user_pokemons) {
+    res.json(user_pokemons);
+  });
+});
+
+// POST new catch to user_pokemons
+router.post('/userPokemons', function(req, res) {
+  models.user_pokemon.create({
+    userId: req.body.userId,
+    pokemonId: req.body.pokemonId
+  }).then(function(user_pokemon) {
+    res.json(user_pokemon);
   });
 });
 

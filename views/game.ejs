@@ -1,5 +1,5 @@
 <% include header %>
-	
+
 	<div class="title">
 		<h1>PokéHunt</h1>
 	</div>
@@ -7,9 +7,14 @@
   <div id="map"></div>
 
   <div class="stats">
+		<!-- Watch position toggle -->
+		<a id="posWatcher" class="right btn-floating btn-large waves-effect waves-light grey darken-1">
+			<i class="material-icons">my_location</i>
+  	</a>
+
   	<!-- Modal trigger -->
-  	<a data-target="modal1" class="red-text text-darken-1 modal-trigger">
-			<i class="medium material-icons right">person_pin</i>
+  	<a data-target="modal1" class="right btn-floating btn-large waves-effect waves-light modal-trigger red darken-1">
+			<i class="material-icons">person_pin</i>
   	</a>
   	
   </div>
@@ -24,81 +29,6 @@
     </div>
   </div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-  <script>
-		
-		function initMap() {
-			if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showCurrentLocation);
-      } else {
-        alert("Geolocation API not supported.");
-      }
-
-      function showCurrentLocation(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        var coords = new google.maps.LatLng(latitude, longitude);
-
-        var mapOptions = {
-          zoom: 20,
-          center: coords,
-          disableDefaultUI: true
-    		};
-
-	      //create the map, and place it in the HTML map div
-	      map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-	      //place the initial marker
-	      var marker = new google.maps.Marker({
-		      position: coords,
-		      map: map,
-		      title: "Current location!",
-	      	icon: 'http://sprites.pokecheck.org/t/187.gif',
-		    	optimized: false
-	      });
-
-	      // get API pokemon data
-	      var options = {
-					url: '/api/pokemons',
-					type: 'get',
-					dataType: 'json'
-				};
-
-				var pokemons = []; 
-				$.ajax(options).done(function(data) {
-					pokemons = data;
-					$.each(pokemons, function(index, pokemon) {
-
-						// pokemon markers
-						var pokeMarker = new google.maps.Marker({
-				      position: {lat: pokemon.lat, lng: pokemon.lng},
-				      icon: pokemon.image,
-				      optimized: false,
-				      map: map
-				    });
-				    pokeMarker.setMap(map);
-
-				    // marker info window
-				    var contentString = '<p>You found a ' + pokemon.name + '!</p><a class="waves-effect waves-light btn">catch?</a>';
-
-					  var infowindow = new google.maps.InfoWindow({
-					    content: contentString
-					  });
-
-					  pokeMarker.addListener('click', function() {
-					    infowindow.open(map, pokeMarker);
-					  });
-					});
-				});
-	    }
-	  }
-
-	  $(document).ready(function(){
-	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-	    $('.modal-trigger').leanModal();
-	  });
-
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgHchX7JLYPIJuwGmi3Criyl_j3kuAppg&callback=initMap&signin=true"async defer></script>
+  <% include partials/geolocation.ejs %>
 
 <% include footer %>
