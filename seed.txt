@@ -22,14 +22,16 @@ curl --data "name=Totodile&lat=-37.818218&lng=144.967065&image=http://pokemondb.
 
 INSERT INTO users (username, email, password, created_at, updated_at) VALUES('user', 'user@example.com', 'password', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Squirtle', -37.818634, 144.959284, 'http://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Squirtle', -37.818634, 144.959284, 'http://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif');
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Bulbasaur', -37.809985, 144.964561, 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Bulbasaur', -37.809985, 144.964561, 'http://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif');
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Growlithe', -37.810079, 144.962719, 'http://img.pokemondb.net/sprites/black-white/anim/normal/growlithe.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Growlithe', -37.810079, 144.962719, 'http://img.pokemondb.net/sprites/black-white/anim/normal/growlithe.gif');
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Charmander', -37.810875, 144.962376, 'http://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Charmander', -37.810875, 144.962376, 'http://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif');
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Pikachu', -37.813056, 144.962217, 'http://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Pikachu', -37.813056, 144.962217, 'http://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif');
 
-INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Chikorita', -37.813264, 144.963014, 'http://img.pokemondb.net/sprites/black-white/anim/normal/chikorita.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Chikorita', -37.813264, 144.963014, 'http://img.pokemondb.net/sprites/black-white/anim/normal/chikorita.gif');
+
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Pichu', -37.812668, 144.960451, 'http://img.pokemondb.net/sprites/black-white/anim/normal/pichu.gif');

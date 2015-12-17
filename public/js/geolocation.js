@@ -107,7 +107,7 @@ function catchPokemon(pokemonId) {
 		dataType: 'json',
 
 		// change the userId to signed in user when join table works
-		data: {userId: 1, pokemonId: parseInt(pokemonId)}
+		data: {userId: 2, pokemonId: parseInt(pokemonId)}
 	};
 
 	$.ajax(options).done(function(data) {
