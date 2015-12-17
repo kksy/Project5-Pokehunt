@@ -51,9 +51,7 @@ function initMap() {
 		    $('.catch-btn').on('click', function() {
 		    	$(this).addClass('disabled');
 				  var pokemonId= $(this).data('id');
-				  if (!$(this).hasClass('disabled')) {
-				  	catchPokemon(pokemonId);
-				  }
+				  catchPokemon(pokemonId);
 				  infowindow.close(map, pokeMarker);
 				  
 				});
