@@ -12,7 +12,9 @@ $(document).ready(function(){
 		var pokemonIds = [];
 
 		userPokemons.forEach(function(userPokemon) {
-			pokemonIds.push(userPokemon.pokemonId);
+			if (userPokemon.userId === 2) {
+				pokemonIds.push(userPokemon.pokemonId);
+			}
 		});
 			
 
