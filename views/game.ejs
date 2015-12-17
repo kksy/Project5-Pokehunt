@@ -1,7 +1,7 @@
 <% include header %>
 
 	<div class="title">
-		<h1>PokéHunt</h1>
+		<h1><%= title %></h1>
 	</div>
 	
   <div id="map"></div>
@@ -22,7 +22,8 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
-      <h2>Collection ( 0 )</h2>
+      <h2>Collection ( <span id="num-pokemon">0</span> )</h2>
+			<div id="poke-images"></div>
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>

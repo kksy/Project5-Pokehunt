@@ -10,7 +10,7 @@ html, body {
 }
 
 h1 {
-	font-size: 45px;
+	font-size: 50px;
 	text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
 }
 
@@ -40,4 +40,28 @@ h2 {
 
 #posWatcher {
 	margin-left: 5px;
+}
+
+#home {
+	height: 100vh;
+	background-image: url('/img/map.PNG');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	h1 {
+		font-size: 65px;
+		font-family: pokeFont;
+		color: white;
+		margin-top: 3em;
+	}
 }
