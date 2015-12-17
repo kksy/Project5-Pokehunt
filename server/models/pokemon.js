@@ -9,16 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     lng: DataTypes.FLOAT,
     image: DataTypes.STRING
   }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        // pokemon.belongsToMany(models.user, {
-        //   foreignKey: 'pokemonId',
-        //   through: 'user_pokemon',
-        //   onDelete: 'cascade'
-        // });
-      }
-    }
+    timestamps: false
   });
   return pokemon;
 };

@@ -5,15 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        // user.belongsToMany(models.pokemon, {
-        //     foreignKey: 'userId',
-        //     through: 'user_pokemon'
-        // });
-      }
-    }
+    timestamps: false
   });
   return user;
 };
