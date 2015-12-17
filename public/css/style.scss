@@ -70,8 +70,7 @@ hr {
 }
 
 .overlay {
-	overflow: auto;
-	position: absolute;
+	position: relative;
 	z-index: 50;
 	width: 100%;
 	top: 50%;
