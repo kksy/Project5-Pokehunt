@@ -1,10 +1,52 @@
 <% include header %>
 
-<section id="home">
+<section id="home" class="section scrollspy row">
 	<div class="overlay">
 		<h1>PokéHunt</h1>
-		<a class="btn waves-effect waves-light blue darken-1">how to</a>
+		<a href="#how-to" class="btn howto-btn waves-effect waves-light blue darken-1">how to</a>
 		<a href="/game" class="btn waves-effect waves-light red darken-1">play</a>
+	</div>
+</section>
+
+<section id="about" class="section scrollspy row">
+	<div class="content">
+		<hr>
+		<h2>ABOUT</h2>
+		<p>PokéHunt is a game based on the Pokémon series. It features Google Maps API and the use of geolocation to simulate player adventure to catch Pokémon surrounding the map. Currently, the hunting area is limited to Melbourne CBD.</p>
+		<br>
+		<p>This app was built for mobile use.</p>
+	</div>
+</section>
+
+<section id="how-to" class="row blue darken-1 section scrollspy">
+	<div class="content">
+		<hr>
+		<h2>HOW TO</h2>
+		<div class="how-to-text col m4 how-to-content">
+			<a class="btn-floating">
+				<i class="material-icons grey darken-4">my_location</i>
+			</a>
+			<p>Click on this symbol on the bottom right hand of the screen to activate geolocation. This allows the app to track your location.</p>
+		</div>
+		<div class="how-to-text col m4 how-to-content">
+			<a class="btn-floating">
+				<i class="material-icons grey darken-4">playlist_add</i>
+			</a>
+			<p>While walking around, you will encounter Pokémon markers, which you need tap on to add to your collection.</p>
+		</div>
+		<div class="how-to-text col m4 how-to-content">
+			<a class="btn-floating">
+				<i class="material-icons grey darken-4">person_pin</i>
+			</a>
+			<p>Check your collection, and see how many Pokémon you can find!</p>
+		</div>
+	</div>
+</section>
+
+<section id="footer" class="section scrollspy row">
+	<div class="content">
+		<p>A WDI Project by Kylie Sy</p>
+		<p><a href="https://github.com/kksy/Project5-Pokehunt">Github</a></p>
 	</div>
 </section>
 

@@ -9,6 +9,10 @@ html, body {
   padding: 0;
 }
 
+h1, h2, h3 {
+	margin: 15px 0 15px 0;
+}
+
 h1 {
 	font-size: 50px;
 	text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
@@ -16,14 +20,108 @@ h1 {
 
 h2 {
 	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
 }
 
+h5 {
+	font-size: 20px;
+}
+
+hr {
+	border: 0;
+	border-top: 5px dotted;
+	width: 70px;;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+/* HOME PAGE */
+#home {
+	height: 100vh;
+	background-image: url('/img/map.PNG');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+#home:after {
+	content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.overlay {
+	
+	position: absolute;
+	z-index: 20;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	h1 {
+		font-size: 65px;
+		font-family: pokeFont;
+		color: white;
+		margin-top: 3em;
+		text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+	}
+}
+
+#about {
+	p {
+		text-align: justify;
+  	text-justify: inter-word;
+  	padding: 0 15px;
+	}
+	
+}
+
+.howto-btn {
+	margin-right: 10px;
+}
+
+#how-to {
+	background-color: black;
+	a {
+		margin-bottom: 10px;
+	}
+}
+
+.how-to-content {
+	text-align: center;
+}
+
+.how-to-text {
+	margin-bottom: 10px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+/* GAME PAGE */
 #map {
   height: 100%;
 }
 
 .title {
 	position: fixed;
+	margin-top: 20px;
 	z-index: 10;
 	left: 50%;
   transform: translate(-50%, 0);
@@ -42,26 +140,35 @@ h2 {
 	margin-left: 5px;
 }
 
-#home {
-	height: 100vh;
-	background-image: url('/img/map.PNG');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
+#modal1 {
+	h3 {
+		text-align: left;
+	}
 }
 
-.overlay {
-	background-color: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	text-align: center;
+/* MEDIA QUERIES */
 
-	h1 {
-		font-size: 65px;
-		font-family: pokeFont;
-		color: white;
-		margin-top: 3em;
+@media screen and (min-width: 767px) {
+
+	h2 {
+		font-size: 30px;
+	}
+
+	.overlay {
+		h1 {
+			font-size: 7em;
+		}
+	}
+
+	.content {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+} 
+
+@media screen and (min-width: 1300px) {
+	.content {
+		padding-left: 15em;
+		padding-right: 15em;
 	}
 }
