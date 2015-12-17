@@ -3,11 +3,13 @@
   src: url(/font/pokemon_solid.ttf);
 }
 
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 
 h1, h2, h3 {
 	margin: 15px 0 15px 0;
@@ -36,6 +38,12 @@ hr {
 
 .row {
 	margin-bottom: 0;
+}
+
+.content {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	overflow: auto;
 }
 
 /* HOME PAGE */
