@@ -21,3 +21,5 @@ curl --data "name=Cyndaquil&lat=-37.811590&lng=144.963777&image=http://img.pokem
 curl --data "name=Totodile&lat=-37.818218&lng=144.967065&image=http://pokemondb.net/pokedex/totodile" http://localhost:3000/api/pokemons
 
 INSERT INTO users (username, email, password, created_at, updated_at) VALUES('user', 'user@example.com', 'password', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO pokemons (name, lat, lng, image, created_at, updated_at) VALUES('Squirtle', -37.818634, 144.959284, 'http://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
