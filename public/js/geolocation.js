@@ -5,8 +5,13 @@ function initMap() {
 
  //initialize the map, and place it in the HTML map div
   var mapOptions = {
-    zoom: 20,
+    zoom: 19,
     center: { lat: -37.8136, lng: 144.9631 },
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
     disableDefaultUI: true
 	};
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -88,10 +93,8 @@ function initMap() {
 
 	    // returns the current position and any updates to the position
 	    watchId = navigator.geolocation.watchPosition(showCurrentLocation);
-
-	    console.log(watchID);
 	  } else {
-	    alert("Geolocation API not supported.");
+	    alert("This game needs location access.");
 	  }
 	});
 }
