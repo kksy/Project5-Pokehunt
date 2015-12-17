@@ -41,3 +41,7 @@ INSERT INTO pokemons (name, lat, lng, image) VALUES('Mareep', -37.811214, 144.96
 INSERT INTO pokemons (name, lat, lng, image) VALUES('Cyndaquil', -37.811590, 144.963777, 'http://img.pokemondb.net/sprites/black-white/anim/normal/cyndaquil.gif');
 
 INSERT INTO pokemons (name, lat, lng, image) VALUES('Totodile', -37.818218, 144.967065, 'http://img.pokemondb.net/sprites/black-white/anim/normal/totodile.gif');
+
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Ponyta', -37.818382, 144.959264, 'http://img.pokemondb.net/sprites/black-white/anim/normal/ponyta.gif');
+
+INSERT INTO pokemons (name, lat, lng, image) VALUES('Pachirisu', -37.817475, 144.958899, 'http://img.pokemondb.net/sprites/black-white/anim/normal/pachirisu-f.gif');
