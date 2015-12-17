@@ -3,7 +3,7 @@ function initMap() {
 	var map;
 	var marker;
 
- //initialize the map, and place it in the HTML map div
+ // Initialize the map, and place it in the HTML map div
   var mapOptions = {
     zoom: 19,
     center: { lat: -37.8136, lng: 144.9631 },
@@ -16,20 +16,20 @@ function initMap() {
 	};
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-  // get API pokemon data
+  // Get API pokemon data
   var options = {
 		url: '/api/pokemons',
 		type: 'get',
 		dataType: 'json'
 	};
 
-	// set pokemon markers on map
+	// Set pokemon markers on map
 	var pokemons = []; 
 	$.ajax(options).done(function(data) {
 		pokemons = data;
 		$.each(pokemons, function(index, pokemon) {
 
-			// pokemon markers
+			// Pokemon markers
 			var pokeMarker = new google.maps.Marker({
 	      position: {lat: pokemon.lat, lng: pokemon.lng},
 	      icon: pokemon.image,
@@ -38,20 +38,24 @@ function initMap() {
 	    });
 	    pokeMarker.setMap(map);
 
-	    // marker info window
+	    // Marker info window
 	    var contentString = '<p>You found a ' + pokemon.name + '!</p><a class="catch-btn waves-effect waves-light btn" data-id="' + pokemon.id + '">catch?</a>';
 
 		  var infowindow = new google.maps.InfoWindow({
 		    content: contentString
 		  });
 
+
 		  pokeMarker.addListener('click', function() {
 		    infowindow.open(map, pokeMarker);
 		    $('.catch-btn').on('click', function() {
-				  console.log('catchme');
+		    	$(this).addClass('disabled');
 				  var pokemonId= $(this).data('id');
-				  console.log(pokemonId);
-				  catchPokemon(pokemonId);
+				  if (!$(this).hasClass('disabled')) {
+				  	catchPokemon(pokemonId);
+				  }
+				  infowindow.close(map, pokeMarker);
+				  
 				});
 		  });
 		});
@@ -62,12 +66,12 @@ function initMap() {
     var longitude = position.coords.longitude;
     var coords = new google.maps.LatLng(latitude, longitude);
 
-    // remove previous marker
+    // Remove previous marker
     if (marker) {
     	marker.setMap(null);
     } 
 
-    // place marker with current location
+    // Place marker with current location
     marker = new google.maps.Marker({
       position: coords,
       map: map,
@@ -80,6 +84,7 @@ function initMap() {
 
   }
 
+  // Start watching position
   $("#posWatcher").click(function() {
 
   	$(this).removeClass('grey');
@@ -106,12 +111,33 @@ function catchPokemon(pokemonId) {
 		type: 'post',
 		dataType: 'json',
 
-		// change the userId to signed in user when join table works
+		// Change the userId to signed in user when join table works
 		data: {userId: 2, pokemonId: parseInt(pokemonId)}
 	};
 
 	$.ajax(options).done(function(data) {
-		console.log(data);
+		var pokeId = data.pokemonId;
+		
+		var options2 = {
+			url: '/api/pokemons',
+			type: 'get',
+			dataType: 'json',
+		};
+
+		// Append collection modal
+		$.ajax(options2).done(function(data2) {
+			data2.forEach(function(dataPokemon) {
+				if (dataPokemon.id === pokeId) {
+					var collectionCount = $('#num-pokemon').text();
+					collectionCount = parseInt(collectionCount) + 1;
+					$('#num-pokemon').text(collectionCount);
+					var imageTag = '<img src="' + dataPokemon.image + '">';
+					$('#poke-images').append(imageTag);
+				}
+			});	
+		});
+
+		
 	});
 }
 

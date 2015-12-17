@@ -11,7 +11,9 @@ $(document).ready(function(){
 	$.ajax(options).done(function(userPokemons) {
 		var pokemonIds = [];
 
+		// Get pokemonId from user_pokemon table, where userId is the current user
 		userPokemons.forEach(function(userPokemon) {
+			// userId = 2 is a placeholder, until logging in is available
 			if (userPokemon.userId === 2) {
 				pokemonIds.push(userPokemon.pokemonId);
 			}
@@ -24,8 +26,9 @@ $(document).ready(function(){
 				dataType: 'json'
 			};
 
+
 			$.ajax(options2).done(function(pokemons) {
-				
+				// Display image and count of pokemon that were caught	
 				var pokeImages = [];
 				pokemonIds.forEach(function(pokemonId) {
 					pokemons.forEach(function(pokemon) {
