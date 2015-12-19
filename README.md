@@ -18,8 +18,11 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 - Ability to click on Pokémon Markers
 - Ability to save Pokémon in a modal pop-up collection
 
+![alt text](public/img/howto.JPG?raw=true)
+
+
 ## Wireframes
-![alt text](public/img/proj5-wireframes.PNG)
+![alt text](public/img/proj5-wireframes.JPG?raw=true)
 
 
 ## Technologies
