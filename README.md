@@ -4,6 +4,8 @@
 
 PokéHunt is a game based on the Pokémon series. It features Google Maps API and the use of geolocation to simulate player adventure to catch Pokémon surrounding the map.
 
+This app is not only limited to Pokémon, but the code can also be used in other forms such as treasure-hunting-type games.
+
 This project was made during the final 5-day project week as a Web Development Immersive student at General Assembly.
 
 <b>Live Demo:</b> http://pokehunt.herokuapp.com/
@@ -55,7 +57,8 @@ I used Ajax calls as an alternative in accessing server data. Another way to do 
 
 ## Installation
 
-This is for people who would like to use my code to make a treasure hunting game using Google Maps API
+This is for people who would like to use my code to make a treasure hunting game using Google Maps API:
+
 1. `$ npm install` once github repository is downloaded
 2. Get a Google API key and replace the placeholder text in `/views/partials/geolocations.ejs`
 3. Install [PostgreSQL](http://www.postgresql.org/download/) and create a database for your app
