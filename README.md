@@ -17,6 +17,7 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 - Geolocation with automatic position update
 - Ability to click on Pokémon Markers
 - Ability to save Pokémon in a modal pop-up collection
+- Made for mobile
 
 ![alt text](public/img/howto.JPG?raw=true)
 
