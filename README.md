@@ -28,17 +28,16 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 
 ## Technologies
 
-1. Node.js
-2. HTML5
-3. CSS3
-4. JavaScript, including
++ Node.js with Express.js
++ HTML5
++ CSS3
++ JavaScript, including
 	- jQuery
 	- AJAX
-5. PostgreSQL with Sequelize
-6. Express.js
-7. Google Maps API
-8. [MaterializeCSS](http://materializecss.com/)
-9. [Generator-Express](https://github.com/petecoop/generator-express)
++ PostgreSQL with Sequelize
++ Google Maps API
++ [MaterializeCSS](http://materializecss.com/)
++ [Generator-Express](https://github.com/petecoop/generator-express)
 
 ## Limitations
 
@@ -48,7 +47,15 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 - One Pokémon can be caught multiple times i.e. no restriction
 - Associations in Sequelize not working
 
+## Remarks and Improvements
+
+This was my first time using Sequelize, and I had difficulties with creating associations. I wasn't able to get it working, so I had to get half of the user_pokemon table in order to access the pokemon table's image column. The code would have been cleaner had the associations worked.
+
+I used Ajax calls as an alternative in accessing server data. Another way to do this is to use `res.render()` in the `/game` route to make the data available through a variable. However, due to the asynchronous behaviour of Node, I was only able to get one out of the multiple I needed.
+
 ## Installation
+
+This is for people who would like to use my code to make a treasure hunting game using Google Maps API
 1. `$ npm install` once github repository is downloaded
 2. Get a Google API key and replace the placeholder text in `/views/partials/geolocations.ejs`
 3. Install [PostgreSQL](http://www.postgresql.org/download/) and create a database for your app
