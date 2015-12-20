@@ -51,7 +51,7 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 
 This was my first time using Sequelize, and I had difficulties with creating associations. I wasn't able to get it working, so I had to get half of the user_pokemon table in order to access the pokemon table's image column. The code would have been cleaner had the associations worked.
 
-I used Ajax calls as an alternative in accessing server data. Another way to do this is to use `res.render()` in the `/game` route to make the data available through a variable. However, due to the asynchronous behaviour of Node, I was only able to get one out of the multiple I needed.
+I used Ajax calls as an alternative in accessing server data. Another way to do this is to use `res.render()` in the `/game` route to make the data available on the client-side through a variable. However, due to the asynchronous behaviour of Node, I was only able to get one out of the multiple I needed.
 
 ## Installation
 
