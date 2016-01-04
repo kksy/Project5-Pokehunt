@@ -50,10 +50,11 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 - Associations in Sequelize not working
 
 ## Remarks and Improvements
++ The minimum viable product for this project was to use Google Maps API to help in creating a real-time treasure hunting game. As my goal for this project was to practice more Node.js and incorporate a database with it, I only planned to have clickable markers once a player reaches a certain area. These markers can then be saved in an inventory. Future improvements include fixing limitiations.
 
-This was my first time using Sequelize, and I had difficulties with creating associations. I wasn't able to get it working, so I had to get half of the user_pokemon table in order to access the pokemon table's image column. The code would have been cleaner had the associations worked.
++ This was my first time using Sequelize, and I had difficulties with creating associations. I wasn't able to get it working, so I had to get half of the user_pokemon table in order to access the pokemon table's image column. The code would have been cleaner had the associations worked.
 
-I used Ajax calls as an alternative in accessing server data. Another way to do this is to use `res.render()` in the `/game` route to make the data available on the client-side through a variable. However, due to the asynchronous behaviour of Node, I was only able to get one out of the multiple I needed.
++ I used Ajax calls as an alternative in accessing server data. Another way to do this is to use `res.render()` in the `/game` route to make the data available on the client-side through a variable. However, due to the asynchronous behaviour of Node, I was only able to get one out of the multiple I needed.
 
 ## Installation
 
