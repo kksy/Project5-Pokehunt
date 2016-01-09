@@ -37,6 +37,7 @@ var models = require('../server/models/index');
 router.get('/', function(req, res) {
     res.render('game', {
       title: 'PokéHunt',
+      API_KEY: process.env.GOOGLE_API_KEY
     });
 });
 

@@ -13,6 +13,9 @@ var apiRoute = require('./routes/api');
 
 var app = express();
 
+// to access environment variables
+require('dotenv').load();
+
 var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
