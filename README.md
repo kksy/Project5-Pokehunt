@@ -23,11 +23,6 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 
 ![alt text](public/img/howto.JPG?raw=true)
 
-
-## Wireframes
-![alt text](public/img/proj5-wireframes.JPG?raw=true)
-
-
 ## Technologies
 
 + Node.js with Express.js
@@ -40,6 +35,16 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 + Google Maps API
 + [MaterializeCSS](http://materializecss.com/)
 + [Generator-Express](https://github.com/petecoop/generator-express)
++ Task Runner: Gulp
++ [Dotenv](https://www.npmjs.com/package/dotenv) to generate environment variables
+
+## Design Process
+
+#### Wireframes
+![alt text](public/img/proj5-wireframes.JPG?raw=true)
+
+#### Database
+![alt text](public/img/proj5-database.JPG?raw=true)
 
 ## Limitations
 
