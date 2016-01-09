@@ -49,7 +49,7 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 
 ## Installation
 1. `$ npm install` once github repository is downloaded
-2. Get a Google API key and replace the placeholder text in `/views/partials/geolocations.ejs`
+2. Get a Google API key and replace the placeholder text in `/views/partials/geolocations.ejs` or create a `.env` file in the root of your project folder. This works as `/routes/game.js` renders a variable `API_KEY: process.env.GOOGLE_API_KEY`.
 3. Install [PostgreSQL](http://www.postgresql.org/download/) and create a database for your app
 5. Change the database information in `/server/config.json`
 6. `$ node_modules/.bin/sequelize db:migrate` to run the migrations and create tables in your database
