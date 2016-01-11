@@ -1,15 +1,10 @@
 
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var gameRoute = require('./routes/game');
-var apiRoute = require('./routes/api');
 
 var app = express();
 
@@ -22,7 +17,6 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 
 
 // view engine setup
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -33,10 +27,33 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
+// configuring passport
+var passport = require('passport');
+var expressSession = require('express-session');
+app.use(expressSession({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+ // using the flash middleware provided by connect-flash to store messages in session
+ // and displaying in templates
+var flash = require('connect-flash');
+app.use(flash());
+
+// initialize passport
+var initPassport = require('./passport/init');
+initPassport(passport);
+
+// routes
+var routes = require('./routes/index');
+var apiRoute = require('./routes/api');
+var loginTest = require('./routes/test')(passport);
+var gameRoute = require('./routes/game');
 app.use('/', routes);
 app.use('/api', apiRoute);
+app.use('/test', loginTest);
 app.use('/game', gameRoute);
 
 /// catch 404 and forward to error handler
