@@ -14,10 +14,6 @@ module.exports = function(passport){
             username:  username 
           }
         }).then(function(user) {
-            // // In case of any error, return using the done method
-            // if (err) {
-            //   return done(err);
-            // }
             // Username does not exist, log the error and redirect back
             if (!user){
               console.log('User Not Found with username '+username);
@@ -30,9 +26,15 @@ module.exports = function(passport){
             }
             // User and password both match, return user from done method
             // which will be treated like success
+            console.log('username and password matched');
             return done(null, user);
           }
-        );
+        ).catch(function(err) {
+          // In case of any error, return using the done method
+            if (err) {
+              throw err;
+            }
+        });
 
       })
   );
