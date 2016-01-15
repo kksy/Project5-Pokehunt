@@ -6,9 +6,11 @@ PokéHunt is a game based on the Pokémon series. It features Google Maps API an
 
 This app is not only limited to Pokémon, but the code can also be used in other forms such as treasure-hunting-type games.
 
-This project was made during the final 5-day project week as a Web Development Immersive student at General Assembly.
+This project was made during the final 5-day project week (14/12/2015 - 18/12/2015) as a Web Development Immersive student at General Assembly.
 
 <b>Live Demo:</b> http://pokehunt.herokuapp.com/
++ username: user1
++ password: password123
 
 ## Disclaimer
 
@@ -20,6 +22,7 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 - Ability to click on Pokémon Markers
 - Ability to save Pokémon in a modal pop-up collection
 - Made for mobile
+- [UPDATE 16/01/2016] User login and signup
 
 ![alt text](public/img/howto.JPG?raw=true)
 
@@ -48,7 +51,7 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 
 ## Limitations
 
-- Only one user
+- [FIXED ON 16/01/2016] Only one user
 - Geolocation high accuracy not set up
 - Live demo has Pokémon markers set in Melbourne CBD only
 - One Pokémon can be caught multiple times i.e. no restriction
