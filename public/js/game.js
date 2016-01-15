@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var currentUserId = $('.stats').data('id');
+
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal-trigger').leanModal();
 
@@ -14,12 +16,11 @@ $(document).ready(function(){
 		// Get pokemonId from user_pokemon table, where userId is the current user
 		userPokemons.forEach(function(userPokemon) {
 			// userId = 2 is a placeholder, until logging in is available
-			if (userPokemon.userId === 2) {
+			if (userPokemon.userId === currentUserId) {
 				pokemonIds.push(userPokemon.pokemonId);
 			}
 		});
 			
-
 			var options2 = {
 				url: '/api/pokemons',
 				type: 'get',

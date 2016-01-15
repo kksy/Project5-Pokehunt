@@ -49,7 +49,7 @@ function initMap() {
 		  pokeMarker.addListener('click', function() {
 		    infowindow.open(map, pokeMarker);
 		    $('.catch-btn').on('click', function() {
-		    	$(this).addClass('disabled');
+		    	// $(this).addClass('disabled');
 				  var pokemonId= $(this).data('id');
 				  catchPokemon(pokemonId);
 				  infowindow.close(map, pokeMarker);
@@ -104,18 +104,18 @@ function initMap() {
 
 // Add pokemon to the database
 function catchPokemon(pokemonId) {
+	var currentUserId = $('.stats').data('id');
 	var options = {
 		url: '/api/userPokemons',
 		type: 'post',
 		dataType: 'json',
 
 		// Change the userId to signed in user when join table works
-		data: {userId: 2, pokemonId: parseInt(pokemonId)}
+		data: {userId: currentUserId, pokemonId: parseInt(pokemonId)}
 	};
 
 	$.ajax(options).done(function(data) {
 		var pokeId = data.pokemonId;
-		
 		var options2 = {
 			url: '/api/pokemons',
 			type: 'get',
