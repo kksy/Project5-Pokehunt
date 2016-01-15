@@ -49,12 +49,18 @@ initPassport(passport);
 // routes
 var routes = require('./routes/index');
 var apiRoute = require('./routes/api');
-var loginTest = require('./routes/test')(passport);
+var authRoute = require('./routes/auth')(passport);
 var gameRoute = require('./routes/game');
 app.use('/', routes);
 app.use('/api', apiRoute);
-app.use('/test', loginTest);
+app.use('/auth', authRoute);
 app.use('/game', gameRoute);
+
+app.get('/logout', function(req, res) {
+  console.log('User is logging out');
+  req.logout();
+  res.redirect('/');
+});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

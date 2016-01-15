@@ -3,6 +3,18 @@
   src: url(/font/pokemon_solid.ttf);
 }
 
+/* MATERIALIZE OVERRIDES*/
+
+@import 'components/color';
+$secondary-color: color("red", "darken-1");
+
+
+// fix for tab overflow issue
+.tabs {
+	overflow-x: hidden;
+}
+
+/* MAIN STYLES */
 
 html, body {
   height: 100%;
@@ -24,6 +36,14 @@ h2 {
 	font-size: 20px;
 	text-align: center;
 	font-weight: bold;
+}
+
+h4 {
+	display: inline-block;
+	vertical-align: middle;
+	text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
+	font-weight: bold;
+	font-size: 40px;
 }
 
 h5 {
@@ -142,10 +162,15 @@ hr {
 	width: 100%;
 	bottom: 0;
 	padding: 10px;
-	cursor: pointer;
+	a {
+		cursor: pointer;
+	}
+	h3 {
+		display: inline-block;
+	}
 }
 
-#posWatcher {
+#posWatcher, #itemsModal {
 	margin-left: 5px;
 }
 
@@ -181,3 +206,6 @@ hr {
 		padding-right: 15em;
 	}
 }
+
+/* APPLY MATERIALIZE OVERRIDES */
+@import 'materialize.scss';

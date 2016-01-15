@@ -10,17 +10,12 @@ module.exports = function(passport){
     function(req, username, password, done) {
 
       findOrCreateUser = function(){
-        // find a user in Mongo with provided username
+        // find a user in Postgres with provided username
         User.findOne({ 
           where: {
             username: username 
           }
         }).then(function(user) {
-          // // In case of any error, return using the done method
-          // if (err){
-          //   console.log('Error in SignUp: '+err);
-          //   return done(err);
-          // }
           // already exists
           if (user) {
             console.log('User already exists with username: '+username);
@@ -31,7 +26,7 @@ module.exports = function(passport){
             var newUser = User.build({
               username: req.body.username,
               password: createHash(req.body.password),
-            })
+            });
 
             // save the user
             newUser.save().then(function(user) {
@@ -40,8 +35,8 @@ module.exports = function(passport){
             }).catch(function(err) {
               if (err){
                 console.log('Error in Saving user: '+err);  
-                throw err;  
-              };
+                return done(null, false, req.flash('message', 'Error saving user'));
+              }
             });
           }
         });

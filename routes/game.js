@@ -13,7 +13,7 @@ var isAuthenticated = function (req, res, next) {
 	if (req.isAuthenticated())
 		return next();
 	// if the user is not authenticated then redirect him to the login page
-	res.redirect('/test');
+	res.redirect('/auth');
 }
 
 // haven't managed to  output more than 1 image, so I used AJAX in js/game.js instead
@@ -48,6 +48,7 @@ var isAuthenticated = function (req, res, next) {
 
 // router.get('/', require('connect-ensure-login').ensureLoggedIn('/test'), function(req, res) {
 router.get('/', isAuthenticated, function(req, res) {
+	// console.log("The current user id is:", req.session.passport.user);
     res.render('game', {
       title: 'PokéHunt',
       API_KEY: process.env.GOOGLE_API_KEY,

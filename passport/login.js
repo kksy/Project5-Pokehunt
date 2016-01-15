@@ -28,12 +28,9 @@ module.exports = function(passport){
             // which will be treated like success
             console.log('username and password matched');
             return done(null, user);
-          }
-        ).catch(function(err) {
+        }).catch(function(err) {
           // In case of any error, return using the done method
-            if (err) {
-              throw err;
-            }
+            return done(err);
         });
 
       })
