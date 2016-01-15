@@ -7,7 +7,7 @@ module.exports = function(passport){
 	router.get('/', function(req, res) {
     	// Display the Login page with any flash message, if any
 		res.render('auth', { 
-			message: req.flash('message'),
+			message: 'message',
 			title: 'test' 
 		});
 	});

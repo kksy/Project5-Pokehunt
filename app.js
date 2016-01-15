@@ -30,6 +30,10 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// route placed here to prevent multiple request caused by deserializing
+var apiRoute = require('./routes/api');
+app.use('/api', apiRoute);
+
 // configuring passport
 var passport = require('passport');
 var expressSession = require('express-session');
@@ -48,12 +52,10 @@ initPassport(passport);
 
 // routes
 var routes = require('./routes/index');
-var apiRoute = require('./routes/api');
-var authRoute = require('./routes/auth')(passport);
+var loginRoute = require('./routes/auth')(passport);
 var gameRoute = require('./routes/game');
 app.use('/', routes);
-app.use('/api', apiRoute);
-app.use('/auth', authRoute);
+app.use('/auth', loginRoute);
 app.use('/game', gameRoute);
 
 app.get('/logout', function(req, res) {
