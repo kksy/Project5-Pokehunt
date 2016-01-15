@@ -14,6 +14,9 @@ $secondary-color: color("red", "darken-1");
 	overflow-x: hidden;
 }
 
+/* APPLY MATERIALIZE OVERRIDES */
+@import 'materialize.scss';
+
 /* MAIN STYLES */
 
 html, body {
@@ -206,6 +209,3 @@ hr {
 		padding-right: 15em;
 	}
 }
-
-/* APPLY MATERIALIZE OVERRIDES */
-@import 'materialize.scss';
