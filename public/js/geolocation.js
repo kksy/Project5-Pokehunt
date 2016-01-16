@@ -48,8 +48,8 @@ function initMap() {
 
 		  pokeMarker.addListener('click', function() {
 		    infowindow.open(map, pokeMarker);
-		    $('.catch-btn').on('click', function() {
-		    	// $(this).addClass('disabled');
+		    // having off before on disables multiple click events from firing
+		    $('.catch-btn').off('click').on('click', function() {
 				  var pokemonId= $(this).data('id');
 				  catchPokemon(pokemonId);
 				  infowindow.close(map, pokeMarker);

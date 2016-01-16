@@ -1,4 +1,4 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 	var currentUserId = $('.stats').data('id');
 
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -50,4 +50,4 @@ $(document).ready(function(){
 			});
 	});
 
-});
+// });
