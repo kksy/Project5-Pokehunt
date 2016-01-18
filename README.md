@@ -36,6 +36,8 @@ No copyright infringement intended. Pokémon is owned by The Pokémon Company, w
 	- AJAX
 + PostgreSQL with Sequelize
 + Google Maps API
++ Passport.js
++ [passport-local](https://github.com/jaredhanson/passport-local)
 + [MaterializeCSS](http://materializecss.com/)
 + [Generator-Express](https://github.com/petecoop/generator-express)
 + Task Runner: Gulp
